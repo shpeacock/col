@@ -53,8 +53,11 @@ deleteQuestion(id:string, idx:number){
     return this._questionService.deleteQuestion(id, idx)
     .then(question=>{
           this.currentUser.questions.splice(idx,1);
+          this.getQuestions();
           })
-    .catch(err=>{console.log(err)})
+    .catch(err=>{console.log(err)});
+    
+    
 }
 
 }

@@ -65,9 +65,7 @@ export class AnswerComponent implements OnInit {
     
   deleteAnswer(id:string,idx: number){
       return this._answerService.deleteAnswer(id, idx)
-      .then(answer=>{
-          this.currentUser.answers.splice(idx,1);
-      })
+      .then(answer=>{this.currentUser.answers.splice(idx,1);})
       .catch(err=>{console.log(err)})
   }
 
