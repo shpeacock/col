@@ -1,0 +1,46 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">
+      <img src ="../../assets/bid.jpg">
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+         You are logged in as {{currentUser.name}}
+      </li>
+      <li><a [routerLink]="['/newquestion']">Submit New Question</a></li>
+      <li><a href (click)="logout()"> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "container">
+  <table class ="striped">
+    <thead>
+      <tr>
+        <td class = "col s12 l2">Question</td>
+        <td class= "col s12 l2">Number of Answers</td>
+        <td class = "col s12 l2">See Answers</td>
+        <td class = "col s12 l2">Submit Your Own Answer</td>
+        <td class = "col s12 l2">Action</td>
+      </tr>
+    </thead>
+      <tr *ngFor="let question of questions">
+        <td>{{question.question}}</td>
+        <td>{{question.answers.length}}</td>
+        <td><a  [routerLink]="['/question', question._id]" href><i class="material-icons">list</i></a></td>
+        <td><a [routerLink]="['/answer', question._id]" href><i class="material-icons">question_answer</i></a></td>
+        <td *ngIf='question.user._id==currentUser._id'>
+        <button (click)="deleteQuestion(question._id, idx)">
+            <i class="material-icons"> delete</i>
+        </button>
+        </td>
+        <td *ngIf='question.user._id !=currentUser._id'></td>
+      </tr>
+    </table>
+</div>

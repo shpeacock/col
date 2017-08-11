@@ -1,0 +1,26 @@
+.container  {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid white;
+  background-image: url("../../assets/col.jpg");
+  background-repeat:no-repeat;
+  background-size: 100%;
+
+
+}
+
+.container .row {
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #6d4b99;
+}
+
+input[type=submit]{
+  background:#a142f4;
+}

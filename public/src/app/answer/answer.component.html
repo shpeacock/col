@@ -1,0 +1,73 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">
+      <img src ="../../assets/bid.jpg">
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li>You are logged In As {{currentUser.name}}</li>
+      <li class="active"><a href [routerLink]="['/dashboard']">Home</a></li>
+      <li><a href (click)="logout()"> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="row">
+     <div class="col s12 l12">
+       <div class="card">
+         <p class="cardp">
+           {{question.user.name}} wants to know....
+         </p>
+         <div class="card-content white-text">
+           <span class="card-title">{{question.question}} ?</span>
+           <p>...{{question.description}}</p>
+         </div>
+         <div class="card-action">
+           <a href [routerLink]="['/answer', question._id]">Answer This Question</a>
+       </div>
+     </div>
+   </div>
+
+<table class ="striped">
+  <thead>
+    <tr>
+      <td>
+        Answered By
+      </td>
+      <td>
+        Answer
+      </td>
+      <td>
+        Answer Details
+      </td>
+      <td>
+        Number of Likes
+      </td>
+    </tr>
+    </thead>
+    <tr *ngFor="let answer of question.answers; let idx = index">
+      <td >
+        {{answer.user.name}}
+      </td>
+      <td>
+        {{answer.answer}}
+      </td>
+      <td>
+        {{answer.details}}
+      </td>
+      <td>
+        {{answer.likes}}
+      </td>
+        
+    <td *ngIf = 'answer.user._id == currentUser._id'>
+        <button (click)="deleteAnswer(answer._id, idx)"> 
+            <i class="material-icons">delete</i>
+        </button>
+        </td>
+      <td *ngIf = 'answer.user._id != currentUser._id'>
+        <button (click)="increaseLikes(answer._id, idx)">
+            
+        <i class="material-icons">plus_one</i>
+        </button>
+      </td>
+    </tr>
+</table>

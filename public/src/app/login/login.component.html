@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row valign-wrapper">
+      <div class="col s6 offset-s3 valign">
+        <div class="card">
+          <div class="card-content white-text">
+            <span class="card-title">Anything You Wanted To know Lewisville</span>
+                <form (submit)="createUser()">
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" name="name" class="form-control" [(ngModel)]="newUser.name">
+                    </div>
+                    <input type="submit" value = "login">
+                  </form>
+                  <div class="card-action">
+                    <p *ngFor="let error of loginErrors">{{ error }}</p>
+                  </div>
+                </div>
+          </div>
+    </div>
+</div>
+</div>

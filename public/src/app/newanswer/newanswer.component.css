@@ -1,0 +1,30 @@
+.stripped{
+  border: 1px solid blacks
+}
+.nav-wrapper{
+  background-color: #6d4b99;
+}
+.brand-logo img{
+  height:65.4px;
+}
+.material-icons {
+  color: #6d4b99;
+}
+.card {
+  background-color: #6d4b99;
+
+}
+.cardp{
+  color:#ffab40
+}
+
+input[type=submit]{
+  background:#a142f4;
+}
+
+li{
+  margin-right: 15px;
+}
+button:active{
+    background-color: #6d4b99;
+}

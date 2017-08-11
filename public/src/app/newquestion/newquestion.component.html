@@ -1,0 +1,39 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">
+      <img src ="../../assets/bid.jpg">
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li class = "active">Submit New Question</li>
+      <li><a href [routerLink]="['/dashboard']">Dashboard</a></li>
+      <li><a href (click)="logout()"> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class = "row">
+</div>
+<div class="container">
+  <div class="row valign-wrapper">
+    <div class="col s6 offset-s3 valign">
+      <div class="card">
+        <div class="card-content white-text">
+          <form (submit)="createQuestion()" #questionForm="ngForm" >
+              <div class="form-group">
+                <label >Post a Question</label>
+                <input type="text" class="form-control" name="question" [(ngModel)]="newQuestion.question" />
+                <label> Description </label>
+                <input type = "text" class = "form-control" name = "description" [(ngModel)]="newQuestion.description"  />
+              </div>
+            <input type="submit" value = "submit" />
+          </form>
+  <p *ngFor="let error of errors">{{ error }}</p>
+      </div>
+    </div>
+  </div>
+</div>
