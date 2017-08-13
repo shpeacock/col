@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     localStorage.removeItem('currentUser');
   }
 
+//creating a new instance of user
   createUser(newUser){
     return this._userService.create(this.newUser)
     .then(user => {

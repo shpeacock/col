@@ -31,8 +31,9 @@ export class NewAnswerComponent implements OnInit {
     private _router:ActivatedRoute
   ) {this._router.params.subscribe(param=>this.param_id=param.id)}
 
+    
+//create a new answer 
   createAnswer(newAnswer){
-    // this.errors=[];
       this.newAnswer.user = this.currentUser._id;
       this.newAnswer.question= this.question._id;
       return this._answerService.create(this.newAnswer)
@@ -51,6 +52,8 @@ export class NewAnswerComponent implements OnInit {
       })
       .catch(err => console.log(err));
     }
+    
+//funcitons run on initialization of webpage
 
   ngOnInit() {
     this.isLoggedIn();
@@ -58,10 +61,13 @@ export class NewAnswerComponent implements OnInit {
     this.getQuestion();
 
   }
+    
+//getting the user id of the current user
   getCurrentUser(){
     this.currentUser = this._userService.getCurrentUser();
   }
 
+//selecting a question and displaying its properties
   getQuestion(){
     return this._questionService.show(this.param_id)
     .then(question => this.question = question)
@@ -72,7 +78,8 @@ logout(){
   this._userService.logout();
   this.router.navigateByUrl('/');
 }
-
+    
+//ensuring that a user cannot access this component without logging in
 isLoggedIn(){
   if(this._userService.getCurrentUser()==null){
     this.router.navigateByUrl('/');
