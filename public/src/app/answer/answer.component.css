@@ -13,9 +13,24 @@
 .card {
   background-color: #6d4b99;
 }
-.cardp{
-  color:#ffab40
+#container{
+  background-color: maroon;
+  height: 970px;
+  width: 100%;
 }
+.card p{
+  color:black;
+  font-weight: bold;
+}
+.card a{
+    color:black;
+    font-weight: bold;
+}
+table {
+    background-color: grey;
+   
+}
+
 li{
   margin-right: 15px;
 }

@@ -13,3 +13,24 @@
 li{
   margin-right: 15px;
 }
+#container{
+  background-color: maroon;
+  background-size: cover;
+  height: 970px;
+  width: 100%;
+}
+.card p{
+  color:black;
+  font-weight: bold;
+}
+.card a{
+    color:black;
+}
+#container{
+  background-color: maroon;
+  background-size: cover;
+}
+table {
+    background-color: grey;
+   
+}

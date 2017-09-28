@@ -20,3 +20,23 @@ input[type=submit]{
 li{
   margin-right: 15px;
 }
+#container{
+  background-color: maroon;
+  background-size: cover;
+      height: 970px;
+  width: 100%;
+}
+.card p{
+  color:black;
+  font-weight: bold;
+}
+.card a{
+    color:black;
+    font-weight: bold;
+}
+.card-content label{
+    color:black;
+    font-weight:bold;
+    align-content: center;
+    align-self: center;
+}
